@@ -22,7 +22,7 @@ ADD config/supervisord.conf /etc/supervisord.conf
 ADD config/php.ini /usr/local/etc/php/php.ini
 ADD config/php-fpm.conf /usr/local/etc/php-fpm.d/php-fpm.conf
 ADD config/nginx.conf /etc/nginx/nginx.conf
-
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
 EXPOSE 80
