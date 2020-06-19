@@ -15,3 +15,6 @@ echo "-> configuring application"
 
 echo "-> starting php-fpm and nginx"
 /usr/bin/supervisord -n -c /etc/supervisord.conf
+
+echo "-> starting mysql"
+/usr/bin/mysqld & 
