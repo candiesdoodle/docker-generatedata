@@ -3,7 +3,7 @@ services:
   generatedata:
     # build from Dockerfile
     build:
-      context: ./Path
+      context: ./
       dockerfile: Dockerfile
     image: mvisonneau/generatedata:latest
     environment:
