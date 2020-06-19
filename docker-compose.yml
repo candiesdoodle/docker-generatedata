@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: mvisonneau/generatedata:latest
+    image: $REPO_NAME:$COMMIT_SHA
     environment:
       GD_DB_HOSTNAME: mysql
       GD_DB_NAME: generatedata
