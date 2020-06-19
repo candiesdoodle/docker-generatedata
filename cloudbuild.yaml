@@ -4,4 +4,6 @@ steps:
   args: ['-f','examples/docker-compose.yml','up','-d']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', '$REPO_NAME:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
