@@ -1,7 +1,7 @@
 #cloudbuild.yaml
 steps:
 - name: 'docker/compose:latest'
-  args: ['-f','docker-compose.yml','build']
+  args: ['-f','docker-compose.yml','build','--build-arg','REPO_NAME=$REPO_NAME','COMMIT_SHA=$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', '$REPO_NAME:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/docker'
