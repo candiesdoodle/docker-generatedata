@@ -5,7 +5,7 @@ services:
     build:
       context: ./Path
       dockerfile: Dockerfile
-      image: mvisonneau/generatedata:latest
+    image: mvisonneau/generatedata:latest
     environment:
       GD_DB_HOSTNAME: mysql
       GD_DB_NAME: generatedata
