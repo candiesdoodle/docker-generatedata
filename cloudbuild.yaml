@@ -1,4 +1,4 @@
 #cloudbuild.yaml
 steps:
 - name: 'docker/compose:latest'
-  args: ['-f','examples/docker-compose.yml','build']
+  args: ['-f','examples/docker-compose.yml','up','--no-start']
